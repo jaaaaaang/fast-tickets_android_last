@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "943737959455",
+    "project_id": "train-auto-ticketing",
+    "storage_bucket": "train-auto-ticketing.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:943737959455:android:084db311a597c90901d12a",
+        "android_client_info": {
+          "package_name": "com.example.fasttickets"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8Wen27TvFwxshacrCAnXuOqnGpZoBOnw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

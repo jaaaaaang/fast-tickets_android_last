@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/dialogTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Title"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/slideImage"
+        android:layout_width="match_parent"
+        android:layout_height="241dp"
+        android:layout_marginTop="16dp"
+        android:scaleType="fitCenter" />
+
+    <TextView
+        android:id="@+id/dialogMessage"
+        android:layout_width="399dp"
+        android:layout_height="422dp"
+        android:layout_marginTop="16dp"
+        android:autoSizeMaxTextSize="12sp"
+        android:autoSizeMinTextSize="5sp"
+        android:autoSizeStepGranularity="2sp"
+        android:autoSizeTextType="uniform"
+        android:text="Message"
+        android:textSize="5sp" />
+
+
+</LinearLayout>

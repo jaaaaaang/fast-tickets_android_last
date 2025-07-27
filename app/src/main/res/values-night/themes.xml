@@ -1,0 +1,20 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <!--    "Theme.AppCompat.Light.NoActionBar"-->
+
+    <style name="Base.Theme.FastTickets" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+        <item name="android:fontFamily">@font/jalnan2</item>
+    </style>
+
+    <!--    <style name="animation">-->
+    <!--        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>-->
+    <!--        <item name="android:windowExitAnimation">@android:anim/fade_out</item>-->
+    <!--    </style>-->
+
+    <style name="Theme.FastTickets" parent="Base.Theme.FastTickets" />
+
+</resources>
