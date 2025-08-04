@@ -207,7 +207,7 @@ class MainActivity : AppCompatActivity() {
             if (phoneNumber.isEmpty() ) {
                 showAlertDialog("로그인", "휴대폰 정보를 입력하세요")
             }
-            else{showRewardedAd() //post 포함 하고있음
+            else{showAdConsentDialog() //post 포함 하고있음
                 loadRewardedAd()
             }
         }
@@ -299,7 +299,7 @@ class MainActivity : AppCompatActivity() {
 
 
         btnSubmit.setOnClickListener {
-            sendReservationRequest()
+            showAdConsentDialo2()
 //            showInterstitialAd()
         }
 
@@ -649,7 +649,51 @@ class MainActivity : AppCompatActivity() {
 //
 
 
+    private fun showAdConsentDialog() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("광고 시청 동의")
+        builder.setMessage("광고를 보시면, 예약 횟수가 추가됩니다.\n광고를 시청하시겠습니까?")
+        builder.setCancelable(false)
 
+        builder.setPositiveButton("예, 시청하겠습니다") { dialog, _ ->
+            // 광고 호출
+            showRewardedAd()
+
+            // 팝업 종료
+            dialog.dismiss()
+        }
+
+        builder.setNegativeButton("아니오") { dialog, _ ->
+            // 팝업 종료
+            dialog.dismiss()
+        }
+
+        val dialog = builder.create()
+        dialog.show()
+    }
+
+    private fun showAdConsentDialo2() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("광고 시청 동의")
+        builder.setMessage("광고 보기 후 예매 진행이 가능합니다.\n광고를 시청하시겠습니까?")
+        builder.setCancelable(false)
+
+        builder.setPositiveButton("예, 시청하겠습니다") { dialog, _ ->
+            // 광고 호출
+            sendReservationRequest()
+
+            // 팝업 종료
+            dialog.dismiss()
+        }
+
+        builder.setNegativeButton("아니오") { dialog, _ ->
+            // 팝업 종료
+            dialog.dismiss()
+        }
+
+        val dialog = builder.create()
+        dialog.show()
+    }
 
 
 
@@ -680,8 +724,8 @@ class MainActivity : AppCompatActivity() {
             SlideAdapter.SlideData("3. 예약 요청 횟수 차감",     "3. 예약 요청 횟수 차감\n- 예약 요청 1회 시 잔여 횟수 1회가 차감됩니다.\n\n",R.drawable.sm_3),
             SlideAdapter.SlideData("4. 추가 예약 요청 충전", "4. 추가 예약 요청 충전\n" +
                     "- 광고 시청 또는 공유 시 예약 요청 1회 충전됩니다.\n" +
-                    "- 일 최대 5회까지 추가 충전이 가능합니다.\n" +
-                    "무료사용자 : (30분) 무료 3회 + 추가 충전 5회 = 총 8회\n",R.drawable.sm_4),
+                    "- 추가 충전 : 일 최대 10회까지 가능\n" +
+                    "- 무료사용자 : (30분) 무료 3회 + 추가 충전 \n",R.drawable.sm_4),
             SlideAdapter.SlideData("5. 예약 요청 횟수 초기화", "5. 예약 요청 횟수 초기화\n" +
                     "- 00시에 전일 잔여 예약 요청 횟수 전체 초기화됩니다.\n" + "- 00시가 되면 다시 기본 3장으로 초기화 됩니다.",R.drawable.sm_5),
             SlideAdapter.SlideData("6. 예약 시도 시간", "6. 예약 시도 시간\n" +
@@ -711,13 +755,8 @@ class MainActivity : AppCompatActivity() {
         })
     val phoneNumber = editPhoneNumber.text.toString().trim()
     button1.setOnClickListener {
-            showRewardedAd()
+        showAdConsentDialog()
 //            Toast.makeText(this, "팝업의 Button 1 클릭", Toast.LENGTH_SHORT).show()
-            //시간 지연
-            //기존창 끄기
-            //새창 띄우기
-//            val phoneNumber = editPhoneNumber.text.toString().trim()
-//            sendReservationRequest_menu(phoneNumber)
         }
 
         button2.setOnClickListener {

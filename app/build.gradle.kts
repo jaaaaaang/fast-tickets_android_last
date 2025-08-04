@@ -12,8 +12,8 @@ android {
         applicationId = "com.wm.fasttickets"
         minSdk = 24
         targetSdk = 35
-        versionCode = 10
-        versionName = "10"
+        versionCode = 14
+        versionName = "14.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
